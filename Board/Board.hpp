@@ -47,6 +47,12 @@ public:
 
     void rotateCurrentPieceLeft(); //Tourner la pièce à gauche
     void rotateCurrentPieceRight(); //Tourner la pièce à droite
+
+    void deleteLine(int y); // Supprime la ligne se trouvant à la position y
+    int deletePossibleLines(); // Vérifie s'il existe des lignes pleines et les supprime
+    void dropCurrentPiece(); // Hard Drop (Toutes les pièces unt fois qu'une ligne est supprimée)
+    bool isCurrentPieceFallen(); // La pièce courante est-elle tombée ?
+    bool isGameOver(); // La partie est-elle finie ?
 };
 
 #endif

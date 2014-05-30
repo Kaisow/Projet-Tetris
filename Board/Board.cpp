@@ -276,3 +276,75 @@ void Board::rotateCurrentPieceRight()
         drawPiece(currentPiece);
     }
 }
+
+//Supprime une ligne
+void Board::deleteLine(int y)
+{
+    clearPiece(currentPiece); // On efface d'abord la pièce courante
+
+        /* On déplace toutes les lignes à partir de y vers le haut
+         * d'une case vers le bas
+         */
+    for(int j = y; j > 0; --j)
+    {
+        for(int i = 0; i < BOARD_WIDTH; ++i)
+            area[i][j] = area[i][j-1];
+    }
+
+    drawPiece(currentPiece); // On la redessine
+}
+
+// Supprime les lignes pleines, renvoie le nombre de lignes supprimées (utile pour les scores)
+int Board::deletePossibleLines()
+{
+    int nbLinesDeleted = 0;
+
+    for(int j = 0; j < BOARD_HEIGHT; ++j)
+    {
+        int i = 0;
+
+        for(; i < BOARD_WIDTH && area[i][j] != FREE; ++i);
+
+        if(i == BOARD_WIDTH) // On a trouvé une ligne pleine
+        {
+            nbLinesDeleted++; // On incrémente le nombre de lignes supprimées
+            deleteLine(j); // On supprime la ligne
+        }
+    }
+
+    return nbLinesDeleted;
+}
+
+//Faire tomber la pièce actuellement jouable
+void Board::dropCurrentPiece()
+{
+    int x = currentPiece.getPosX();
+    int y = currentPiece.getPosY();
+
+    while(isCurrentPieceMovable(x++, y)) // Tant qu'on peut toujours bouger la pièce vers le bas
+        moveCurrentPieceDown(); // on le fait
+}
+
+// Teste si la pièce courante est tombée donc ne peut plus bouger
+bool Board::isCurrentPieceFallen()
+{
+    int x = currentPiece.getPosX();
+    int y = currentPiece.getPosY();
+
+    if(isCurrentPieceMovable(x + 1, y)) // Si on peut encore la bouger vers le bas
+        return false; // on renvoie faux
+
+    return true; // si non on renvoie vrai
+}
+
+// La partie est elle finie
+bool Board::isGameOver()
+{
+    for(int i = 0; i < BOARD_WIDTH; ++i)
+    {
+        if(area[i][0] != FREE) // Si il y a un bloc sur la première ligne de l'aire
+            return true; // C'est que la partie est finie
+    }
+
+    return false;
+}

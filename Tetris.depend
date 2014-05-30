@@ -32,13 +32,13 @@
 	<iostream>
 	<SFML/Graphics.hpp>
 
-1401442706 c:\users\max\documents\github\projet-tetris\shapes\shapes.hpp
+1401442813 c:\users\max\documents\github\projet-tetris\shapes\shapes.hpp
 	"../Hub/Hub.hpp"
 
 1401354345 c:\users\max\documents\github\projet-tetris\piece\piece.hpp
 	"../Hub/Hub.hpp"
 
-1401442320 c:\users\max\documents\github\projet-tetris\board\board.hpp
+1401443466 c:\users\max\documents\github\projet-tetris\board\board.hpp
 	"../Hub/Hub.hpp"
 
 1401352190 source:c:\users\max\documents\github\projet-tetris\shapes\shapes.cpp

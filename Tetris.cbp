@@ -42,7 +42,6 @@
 		<Unit filename="Hub/Hub.hpp" />
 		<Unit filename="Piece/Piece.cpp" />
 		<Unit filename="Piece/Piece.hpp" />
-		<Unit filename="Shapes/Shapes.cpp" />
 		<Unit filename="Shapes/Shapes.hpp" />
 		<Extensions>
 			<code_completion />

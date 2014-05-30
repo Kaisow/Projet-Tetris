@@ -4,6 +4,7 @@
 #include "../Shapes/Shapes.hpp"
 #include "../Piece/Piece.hpp"
 #include "../Board/Board.hpp"
+#include "../Game/Game.hpp"
 
 #ifdef SFML_STATIC
 #endif // SFML_STATIC

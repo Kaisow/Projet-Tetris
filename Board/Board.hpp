@@ -27,6 +27,8 @@ public:
     Piece getCurrentPiece(); //Obtention de la pièce actuellemetn déplaçable
     //Algorithme du floodFill (Test de remplissage des cases)
     void flood(int i, int j, int px, int py, int k, int o, int value, bool visited[][SIZE]);
+    void flood(int i, int j, int px, int py, int k, int o, bool &flag, bool visited[][SIZE]); //Surdéfinition (anti-colisions)
+
     void floodFill(int i, int j, int px, int py, int k, int o, int value);
 
 
@@ -35,6 +37,16 @@ public:
     void clearPiece(Piece p); //Effacer une pièce
     void newPiece(Piece p); //Spawn d'une pièce
     void clear(); //Réinitialisation de toute l'aire de jeu
+
+    bool isCurrentPieceMovable(int x, int y); //Vérifie si la pièce peut être déplacée à la position x, y
+    bool isCurrentPieceRotable(int o); //Vérifie si la pièce peut peut être retournée
+
+    void moveCurrentPieceDown(); //Diéplacement pièce vers le bas
+    void moveCurrentPieceLeft(); //Déplacement pièce vers la gauche
+    void moveCurrentPieceRight(); //déplacement pièce vers la droite
+
+    void rotateCurrentPieceLeft(); //Tourner la pièce à gauche
+    void rotateCurrentPieceRight(); //Tourner la pièce à droite
 };
 
 #endif

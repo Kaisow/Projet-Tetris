@@ -41,6 +41,29 @@ void Board::flood(int i, int j, int px, int py, int k, int o, int value, bool vi
     flood(i - 1, j, px - 1, py, k, o, value, visited);
 }
 
+//Surdéfinition
+void Board::flood(int i, int j, int px, int py, int k, int o, bool &flag, bool visited[][SIZE])
+{
+    if(px < 0 || px >= SIZE || py < 0 || py >= SIZE || visited[px][py] || PIECES[k][o][px][py] == FREE)
+        return;
+
+    visited[px][py] = true;
+
+   /* Si on dépasse les limites de l'aire de jeu
+    * ou si la case sur laquelle on est n'est pas vide
+    */
+    if(i < 0 || i >= BOARD_HEIGHT || j < 0 || j >= BOARD_WIDTH || area[j][i] != FREE)
+    {
+        flag = false; // on met flag à false
+        return;
+    }
+
+    flood(i, j - 1, px, py - 1, k, o, flag, visited);
+    flood(i + 1, j, px + 1, py, k, o, flag, visited);
+    flood(i, j + 1, px, py + 1, k, o, flag, visited);
+    flood(i - 1, j, px - 1, py, k, o, flag, visited);
+}
+
 //Fonction appelant la fonction flood
 void Board::floodFill(int i, int j, int px, int py, int k, int o, int value)
 {
@@ -63,25 +86,25 @@ void Board::drawPiece(Piece p)
 
     switch(k) // En fonction de son type
     {
-        case I:
+        case 0:
             p.setColor(CYAN); // On lui affecte la couleur appropriée
             break;
-        case J:
+        case 1:
             p.setColor(BLUE);
             break;
-        case L:
+        case 2:
             p.setColor(ORANGE);
             break;
-        case O:
+        case 3:
             p.setColor(YELLOW);
             break;
-        case S:
+        case 4:
             p.setColor(GREEN);
             break;
-        case T:
+        case 5:
             p.setColor(PURPLE);
             break;
-        case Z:
+        case 6:
             p.setColor(RED);
             break;
         default:
@@ -121,5 +144,135 @@ void Board::clear()
     {
         for(int j = 0; j < BOARD_HEIGHT; ++j)
             area[i][j] = FREE;
+    }
+}
+
+//Vérifie si la pièce peut être déplacée vers x,y
+bool Board::isCurrentPieceMovable(int x, int y)
+{
+    clearPiece(currentPiece); // D'abord on efface la pièce courante
+
+    bool movable = true; // On suppose au départ qu'on peut bouger la pièce
+
+   //Déclaration et initialisation du tableau pour le flood fill
+    bool visited[SIZE][SIZE];
+
+    for(int l = 0; l < SIZE; ++l)
+        for(int m = 0; m < SIZE; ++m)
+            visited[l][m] = false;
+
+    int k = currentPiece.getKind(); // On récupère le type ...
+    int o = currentPiece.getOrientation(); // ... et l'orientation de la pièce
+
+   /* On fait notre flood fill */
+    flood(x, y, PIVOT_X, PIVOT_Y, k, o, movable, visited);
+
+    drawPiece(currentPiece); // On redessine notre pièce
+
+    return movable; // On renvoie le résultat
+}
+
+//Vérifie si la pièce peut effectuée la rotation o
+bool Board::isCurrentPieceRotable(int o)
+{
+    clearPiece(currentPiece);
+
+    bool rotable = true;
+
+    bool visited[SIZE][SIZE];
+
+    for(int i = 0; i < SIZE; ++i)
+        for(int j = 0; j < SIZE; ++j)
+            visited[i][j] = false;
+
+    int k = currentPiece.getKind();
+
+    flood(currentPiece.getPosX(), currentPiece.getPosY(), PIVOT_X, PIVOT_Y, k, o, rotable, visited);
+
+    drawPiece(currentPiece);
+
+    return rotable;
+}
+
+// Déplace la pièce d'une case vers le bas
+void Board::moveCurrentPieceDown()
+{
+    int x = currentPiece.getPosX();
+    int y = currentPiece.getPosY();
+
+    if(isCurrentPieceMovable(x + 1, y)) // Si on peut bouger la pièce vers le bas
+    {
+        clearPiece(currentPiece); // On efface la pièce de son ancienne position
+        currentPiece.setPosX(x + 1); // On incrémente son ordonnée
+
+        drawPiece(currentPiece); // On la redessine à la nouvelle position
+    }
+}
+
+// Déplace la pièce d'une case vers la gauche
+void Board::moveCurrentPieceLeft()
+{
+    int x = currentPiece.getPosX();
+    int y = currentPiece.getPosY();
+
+    if(isCurrentPieceMovable(x, y - 1))
+    {
+        clearPiece(currentPiece);
+        currentPiece.setPosY(y - 1);
+
+        drawPiece(currentPiece);
+    }
+}
+
+// Déplace la pièce d'une case vers la droite
+void Board::moveCurrentPieceRight()
+{
+    int x = currentPiece.getPosX();
+    int y = currentPiece.getPosY();
+
+    if(isCurrentPieceMovable(x, y + 1))
+    {
+        clearPiece(currentPiece);
+        currentPiece.setPosY(y + 1);
+
+        drawPiece(currentPiece);
+    }
+}
+
+// Tourne la pièce vers la gauche
+void Board::rotateCurrentPieceLeft()
+{
+    int o = currentPiece.getOrientation(); // On récupère l'orientation courante
+
+    if(o > 0) // Si on n'est pas sur la 1ère orientation
+        o--; // On peut décrémenter o
+    else // Si non
+        o = NB_ROTATIONS - 1; // On passe à la dernière orientation
+
+    if(isCurrentPieceRotable(o)) // Si on peut tourner la pièce
+    {
+        clearPiece(currentPiece); // On efface la pièce courante
+
+        currentPiece.setOrientation(o); // On change son orientation
+        drawPiece(currentPiece); // On la redessine avec la nouvelle orientation
+    }
+}
+
+// Tourne la pièce vers la droite
+void Board::rotateCurrentPieceRight()
+{
+    int o = currentPiece.getOrientation();
+
+    if(o < NB_ROTATIONS - 1) // Si on n'est pas sur la dernière orientation
+        o++; // On peut incrémenter o
+    else // Si non
+        o = 0; // On passe à la 1ère orientation
+
+    if(isCurrentPieceRotable(o))
+    {
+        clearPiece(currentPiece);
+
+        currentPiece.setOrientation(o);
+        drawPiece(currentPiece);
     }
 }

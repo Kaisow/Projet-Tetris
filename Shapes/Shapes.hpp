@@ -3,13 +3,13 @@
 #define SHAPE_HPP
 
 //7 types de pièces
-const int nbrPiece = 7;
+const int NB_KINDS = 7;
 //4 rotation possible par pièce
-const int rotationPiece = 4;
+const int NB_ROTATIONS = 4;
 //4 * 4 La taille de la matrice enfermant la pièce
-const int tailleMatrice = 4;
+const int SIZE = 4;
 
-static int PIECES[nbrPiece][rotationPiece][tailleMatrice][tailleMatrice] =
+static int PIECES[NB_KINDS][NB_ROTATIONS][SIZE][SIZE] =
 {
     { // O
         {

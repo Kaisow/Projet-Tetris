@@ -52,7 +52,7 @@ class Game
 	sf::RenderWindow		_window;
 
 	// Logique
-	Display					_scene;
+	Display					_display;
 
 public:
 	Game();

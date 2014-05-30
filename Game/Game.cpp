@@ -37,7 +37,7 @@ void Display::update(sf::Time& tau)
 //-----------------------------------------------------------------------------
 
 Game::Game() :
-_scene(_window),
+_display(_window),
 _window(sf::VideoMode(500, 500), "Evénements I")
 {
 }
@@ -60,7 +60,7 @@ void Game::processEvents()
 	sf::Event event;
 	while (_window.pollEvent(event))
 	{
-		_scene.handleEvent(event);
+		_display.handleEvent(event);
 
 		if (event.type == sf::Event::Closed)
 			_window.close();
@@ -70,13 +70,13 @@ void Game::processEvents()
 
 void Game::update(sf::Time& tau)
 {
-	_scene.update(tau);
+	_display.update(tau);
 }
 
 void Game::render()
 {
 	_window.clear();
-	_scene.draw();
+	_display.draw();
 	_window.display();
 }
 

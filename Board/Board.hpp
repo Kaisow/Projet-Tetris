@@ -23,8 +23,16 @@ public:
 
     Board(); //Constructeur
 
-        void setCurrentPiece(Piece p); //Configuration pièce acctuellement déplaceable
-        Piece getCurrentPiece(); //Obtention de la pièce actuellemetn déplaçable
+    void setCurrentPiece(Piece p); //Configuration pièce acctuellement déplaceable
+    Piece getCurrentPiece(); //Obtention de la pièce actuellemetn déplaçable
+    //Algorithme du floodFill (Test de remplissage des cases)
+    void flood(int i, int j, int px, int py, int k, int o, int value, bool visited[][SIZE]);
+    void floodFill(int i, int j, int px, int py, int k, int o, int value);
+
+
+    //Graphique ------------------------------------------------
+    void drawPiece(Piece p); //Dessiner une pièce
+    void clearPiece(Piece p); //Effacer une pièce
 };
 
 #endif

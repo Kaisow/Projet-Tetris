@@ -22,3 +22,24 @@
 
 1401354904 source:c:\users\max\desktop\tetris\board\board.cpp
 
+1401354700 source:c:\users\max\documents\github\projet-tetris\piece\piece.cpp
+	"../Hub/Hub.hpp"
+
+1401358636 c:\users\max\documents\github\projet-tetris\hub\hub.hpp
+	"../Shapes/Shapes.hpp"
+	"../Piece/Piece.hpp"
+	"../Board/Board.hpp"
+	<iostream>
+	<SFML/Graphics.hpp>
+
+1401353589 c:\users\max\documents\github\projet-tetris\shapes\shapes.hpp
+	"../Hub/Hub.hpp"
+
+1401354345 c:\users\max\documents\github\projet-tetris\piece\piece.hpp
+	"../Hub/Hub.hpp"
+
+1401437760 c:\users\max\documents\github\projet-tetris\board\board.hpp
+	"../Hub/Hub.hpp"
+
+1401352190 source:c:\users\max\documents\github\projet-tetris\shapes\shapes.cpp
+

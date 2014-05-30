@@ -25,11 +25,12 @@
 1401354700 source:c:\users\max\documents\github\projet-tetris\piece\piece.cpp
 	"../Hub/Hub.hpp"
 
-1401464466 c:\users\max\documents\github\projet-tetris\hub\hub.hpp
+1401466227 c:\users\max\documents\github\projet-tetris\hub\hub.hpp
 	"../Shapes/Shapes.hpp"
 	"../Piece/Piece.hpp"
 	"../Board/Board.hpp"
 	"../Game/Game.hpp"
+	"../Graphics_board/Graphics_board.hpp"
 	<iostream>
 	<SFML/Graphics.hpp>
 
@@ -47,20 +48,27 @@
 1401443735 source:c:\users\max\documents\github\projet-tetris\board\board.cpp
 	"../Hub/Hub.hpp"
 
-1401464822 c:\users\max\documents\github\projet-tetris\game\game.hpp
+1401466046 c:\users\max\documents\github\projet-tetris\game\game.hpp
 	<SFML/Graphics.hpp>
 	<cassert>
 	<iostream>
 	"../Hub//Hub.hpp"
 
-1401464466 c:\users\max\documents\github\projet-tetris\hub\\hub.hpp
+1401466227 c:\users\max\documents\github\projet-tetris\hub\\hub.hpp
 	"../Shapes/Shapes.hpp"
 	"../Piece/Piece.hpp"
 	"../Board/Board.hpp"
 	"../Game/Game.hpp"
+	"../Graphics_board/Graphics_board.hpp"
 	<iostream>
 	<SFML/Graphics.hpp>
 
 1401464779 source:c:\users\max\documents\github\projet-tetris\game\game.cpp
 	"Game.hpp"
+
+1401466160 c:\users\max\documents\github\projet-tetris\graphics-board\graphics-board.hpp
+	"../Hub/Hub.hpp"
+
+1401466160 c:\users\max\documents\github\projet-tetris\graphics_board\graphics_board.hpp
+	"../Hub/Hub.hpp"
 

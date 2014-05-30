@@ -4,7 +4,7 @@
 #ifndef PIECE_HPP
 #define PIECE_HPP
 
-enum { CYAN , BLUE, ORANGE, YELLOW, GREEN, PURPLE, RED, GHOST }; // Les couleurs de chaque pièce, GHOST est pour la pièce fantôme
+enum  Couleur{ CYAN , BLUE, ORANGE, YELLOW, GREEN, PURPLE, RED, GHOST }; // Les couleurs de chaque pièce, GHOST est pour la pièce fantôme
 
 /* Les coordonnées du point de pivot de la pièce */
 const int PIVOT_X = 1;

@@ -33,6 +33,8 @@ public:
     //Graphique ------------------------------------------------
     void drawPiece(Piece p); //Dessiner une pièce
     void clearPiece(Piece p); //Effacer une pièce
+    void newPiece(Piece p); //Spawn d'une pièce
+    void clear(); //Réinitialisation de toute l'aire de jeu
 };
 
 #endif

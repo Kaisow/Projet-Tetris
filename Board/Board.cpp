@@ -52,7 +52,7 @@ void Board::floodFill(int i, int j, int px, int py, int k, int o, int value)
 
     flood(i, j, px, py, k, o, value, visited);
 }
-
+//Génération de la pièce
 void Board::drawPiece(Piece p)
 {
     int i = p.getPosX(); // On récupère les ...
@@ -90,4 +90,36 @@ void Board::drawPiece(Piece p)
     //On fait le flood fill à partir du point de pivot de la pièce
     //et on remplir l'aire de jeu en fonction de la couleur de la pièce
     floodFill(i, j, PIVOT_X, PIVOT_Y, k, o, p.getColor());
+}
+
+//Effacement de la pièce
+void Board::clearPiece(Piece p)
+{
+    int i = p.getPosX();
+    int j = p.getPosY();
+
+    int k = p.getKind();
+    int o = p.getOrientation();
+
+    floodFill(i, j, PIVOT_X, PIVOT_Y, k, o, FREE);
+}
+
+//Spawn d'une pièce
+void Board::newPiece(Piece p)
+{
+    p.setPosX(ORIGIN_X); // On donne à la pièce les coordonnées ...
+    p.setPosY(ORIGIN_Y); // de l'origine
+
+    drawPiece(p); // On la dessine
+
+    setCurrentPiece(p); // On déclare cette pièce comme pièce courante de l'aire de jeu
+}
+
+void Board::clear()
+{
+    for(int i = 0; i < BOARD_WIDTH; ++i)
+    {
+        for(int j = 0; j < BOARD_HEIGHT; ++j)
+            area[i][j] = FREE;
+    }
 }

@@ -5,6 +5,7 @@
 using namespace sf;
 
 class Graphics_board {
+    Board       _board;
 
 public :
     //Initialisation

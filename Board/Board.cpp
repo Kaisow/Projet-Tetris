@@ -102,10 +102,10 @@ void Board::drawPiece(Piece p)
             p.setColor(GREEN);
             break;
         case 5:
-            p.setColor(PURPLE);
+            p.setColor(RED);
             break;
         case 6:
-            p.setColor(RED);
+            p.setColor(GHOST);
             break;
         default:
             break;

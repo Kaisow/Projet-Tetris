@@ -6,7 +6,7 @@
 class Graphics_carre {
     RectangleShape square;
 public :
-    Graphics_carre(Couleur col, Vector2i pos);
+    Graphics_carre(Couleur col, Vector2f pos);
     ~Graphics_carre() {};
 
     void handleEvent(Event& evt);

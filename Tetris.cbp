@@ -39,6 +39,12 @@
 		</Compiler>
 		<Unit filename="Board/Board.cpp" />
 		<Unit filename="Board/Board.hpp" />
+		<Unit filename="Game/Game.cpp" />
+		<Unit filename="Game/Game.hpp" />
+		<Unit filename="Graphics_board/Graphics_board.cpp" />
+		<Unit filename="Graphics_board/Graphics_board.hpp" />
+		<Unit filename="Graphics_carre/Graphics_carre.cpp" />
+		<Unit filename="Graphics_carre/Graphics_carre.hpp" />
 		<Unit filename="Hub/Hub.hpp" />
 		<Unit filename="Piece/Piece.cpp" />
 		<Unit filename="Piece/Piece.hpp" />

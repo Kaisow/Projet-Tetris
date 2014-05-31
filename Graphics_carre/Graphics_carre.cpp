@@ -13,6 +13,8 @@ Graphics_carre::Graphics_carre(Couleur col, Vector2f pos)
             break;
         case CYAN :
             square.setFillColor(Color::Cyan);
+            square.setOutlineColor(Color::Black);
+            square.setOutlineThickness(1);
             break;
         case YELLOW :
             square.setFillColor(Color::Yellow);

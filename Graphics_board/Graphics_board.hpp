@@ -6,10 +6,6 @@ using namespace sf;
 
 class Graphics_carre;
 class Graphics_board {
-    Board                               b;
-    typedef vector<Graphics_carre>      VectorOfSquares;
-    typedef vector<VectorOfSquares>     MatrixOfSquares;
-    MatrixOfSquares                     grille[20][10];
 
 public :
     //Initialisation

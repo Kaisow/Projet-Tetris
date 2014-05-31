@@ -8,6 +8,8 @@ Graphics_carre::Graphics_carre(Couleur col, Vector2f pos)
     switch(col) {
         case BLACK :
             square.setFillColor(Color::Black);
+            square.setOutlineColor(Color::White);
+            square.setOutlineThickness(1);
             break;
         case CYAN :
             square.setFillColor(Color::Cyan);
@@ -31,5 +33,9 @@ Graphics_carre::Graphics_carre(Couleur col, Vector2f pos)
             square.setFillColor(Color::Black);
             break;
     };
+}
 
+void Graphics_carre::draw(sf::RenderTarget& renderer)
+{
+    renderer.draw(square);
 }

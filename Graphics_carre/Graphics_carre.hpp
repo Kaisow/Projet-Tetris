@@ -11,7 +11,7 @@ public :
 
     void handleEvent(Event& evt);
     void update(Time& delta);
-    void draw();
+    void draw(sf::RenderTarget& renderer);
 
 
 

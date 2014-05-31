@@ -5,7 +5,7 @@
 
 //FREE la grille est vide (elle contient 0)
 //OCCUPED la grille contient une valeur différente de 0
-enum  { FREE,  OCCUPED };
+enum { FREE,  OCCUPED };
 
 const int BOARD_HEIGHT = 20; // La hauteur de l'aire de jeu
 const int BOARD_WIDTH = 10; // Sa largeur
@@ -22,6 +22,8 @@ public:
     int area[BOARD_WIDTH][BOARD_HEIGHT]; // Le tableau représentant l'aire de jeu
 
     Board(); //Constructeur
+
+    int getState(int i, int j);
 
     void setCurrentPiece(Piece p); //Configuration pièce acctuellement déplaceable
     Piece getCurrentPiece(); //Obtention de la pièce actuellemetn déplaçable

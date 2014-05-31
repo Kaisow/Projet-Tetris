@@ -8,7 +8,12 @@ Board::Board()
             area[i][j] = FREE;
 }
 
-//Configuration de la piède jouable
+int Board::getState(int i, int j)
+{
+    return area[i][j];
+}
+
+//Configuration de la pièce jouable
 void Board::setCurrentPiece(Piece p)
 {
     currentPiece = p;

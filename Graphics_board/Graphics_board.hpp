@@ -4,12 +4,15 @@
 #define GRAPHICS_BOARD_HPP
 using namespace sf;
 
+class Graphics_carre;
 class Graphics_board {
-    Board       _board;
+    typedef vector<Graphics_carre>      VectorOfSquares;
+    typedef vector<VectorOfSquares>     MatrixOfSquares;
+    MatrixOfSquares                     grille;
 
 public :
     //Initialisation
-    Graphics_board(); //Initialise 20 cases vides
+    Graphics_board(Board& board, Vector2f center); //Initialise 20 cases vides
     ~Graphics_board(){}; //Destructeur
 
     //Gestionnaire des évènements

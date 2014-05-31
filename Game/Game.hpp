@@ -16,13 +16,14 @@ using namespace std;
 //-----------------------------------------------------------------------------
 //  Display
 //-----------------------------------------------------------------------------
-
+class Graphics_board;
 class Display
 {
 private:
 	// Graphique
 	sf::View				_displayView;
 	sf::RenderWindow&		_window;
+	Board                   _board;
 
 public:
 	// Constructeur & destructeur

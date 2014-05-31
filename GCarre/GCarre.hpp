@@ -1,13 +1,13 @@
 #include "../Hub/../Hub/Hub.hpp"
-#ifndef GRAPHICS_CARRE_HPP
-#define GRAPHICS_CARRE_HPP
+#ifndef GCarre_HPP
+#define GCarre_HPP
 
 //Représente la plus petite entité du jeu Tetris, soit un carré
-class Graphics_carre {
+class GCarre {
     RectangleShape square;
 public :
-    Graphics_carre(Couleur col, Vector2f pos);
-    ~Graphics_carre() {};
+    GCarre(Couleur col, Vector2f pos);
+    ~GCarre() {};
 
     void handleEvent(Event& evt);
     void update(Time& delta);
@@ -21,4 +21,4 @@ public :
 
 
 
-#endif // GRAPHICS_CARRE_HPP
+#endif // GCarre_HPP

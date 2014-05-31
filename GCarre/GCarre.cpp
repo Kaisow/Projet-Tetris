@@ -1,6 +1,6 @@
-#include "Graphics_carre.hpp"
+#include "GCarre.hpp"
 
-Graphics_carre::Graphics_carre(Couleur col, Vector2f pos)
+GCarre::GCarre(Couleur col, Vector2f pos)
 {
     square.setSize(Vector2f(25.0,25.0));
     square.setPosition(pos);
@@ -37,7 +37,15 @@ Graphics_carre::Graphics_carre(Couleur col, Vector2f pos)
     };
 }
 
-void Graphics_carre::draw(sf::RenderTarget& renderer)
+void GCarre::handleEvent(Event& evt)
+{
+}
+
+void GCarre::update(Time& delta)
+{
+}
+
+void GCarre::draw(sf::RenderTarget& renderer)
 {
     renderer.draw(square);
 }

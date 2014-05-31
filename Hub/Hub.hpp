@@ -5,8 +5,8 @@
 #include "../Piece/Piece.hpp"
 #include "../Board/Board.hpp"
 #include "../Game/Game.hpp"
-#include "../Graphics_board/Graphics_board.hpp"
-#include "../Graphics_carre/Graphics_carre.hpp"
+#include "../GBoard/GBoard.hpp"
+#include "../GCarre/GCarre.hpp"
 
 #ifdef SFML_STATIC
 #endif // SFML_STATIC

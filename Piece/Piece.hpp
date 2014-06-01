@@ -1,6 +1,3 @@
-#include "../Hub/Hub.hpp"
-
-//PIECE_H
 #ifndef PIECE_HPP
 #define PIECE_HPP
 

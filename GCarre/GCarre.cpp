@@ -1,6 +1,10 @@
 #include "GCarre.hpp"
 
-GCarre::GCarre(Couleur col, Vector2f pos)
+GCarre::GCarre()
+{
+}
+
+void GCarre::init(Couleur col, Vector2f pos)
 {
     square.setSize(Vector2f(25.0,25.0));
     square.setPosition(pos);
@@ -36,6 +40,7 @@ GCarre::GCarre(Couleur col, Vector2f pos)
             break;
     };
 }
+
 
 void GCarre::handleEvent(Event& evt)
 {

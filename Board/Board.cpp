@@ -1,4 +1,4 @@
-#include "../Hub/Hub.hpp"
+#include "Board.hpp"
 
 Board::Board()
 {

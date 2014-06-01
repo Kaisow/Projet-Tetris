@@ -9,9 +9,11 @@
 #include <SFML/Graphics.hpp>
 #include <cassert>
 #include <iostream>
-#include "../Hub//Hub.hpp"
+#include "../GBoard/GBoard.hpp"
+#include "../GCarre/GCarre.hpp"
 
 using namespace std;
+using namespace sf;
 
 //-----------------------------------------------------------------------------
 //  Display

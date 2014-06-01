@@ -1,4 +1,4 @@
-#include "../Hub/Hub.hpp"
+#include "Piece.hpp"
 
 Piece::Piece()
 {

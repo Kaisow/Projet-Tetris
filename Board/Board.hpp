@@ -1,5 +1,6 @@
 /* board.h */
-#include "../Hub/Hub.hpp"
+#include "../Shapes/Shapes.hpp"
+#include "../Piece/Piece.hpp"
 #ifndef BOARD_H
 #define BOARD_H
 

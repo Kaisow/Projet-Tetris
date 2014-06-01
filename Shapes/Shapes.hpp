@@ -1,4 +1,3 @@
-#include "../Hub/Hub.hpp"
 #ifndef SHAPES_HPP
 #define SHAPE_HPP
 

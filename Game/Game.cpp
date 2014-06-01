@@ -17,6 +17,7 @@ _window(window), _gBoard(_board, getCenter())
 
 void Display::draw()
 {
+    _gBoard.draw(_window);
 }
 
 sf::Vector2f Display::getCenter()

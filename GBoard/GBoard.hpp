@@ -1,5 +1,6 @@
 #include "../GCarre/GCarre.hpp"
 #include "../Board/Board.hpp"
+#include <vector>
 
 #ifndef GBoard_HPP
 #define GBoard_HPP
@@ -7,6 +8,7 @@
 using namespace sf;
 
 class GBoard {
+    GCarre          _carres[20][10];
 
 
 public :
@@ -21,7 +23,7 @@ public :
     void update(Time& delta);
 
     //Affichage
-    void draw();
+    void draw(sf::RenderWindow& window);
 
 };
 #endif // GBoard_HPP

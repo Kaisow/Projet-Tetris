@@ -27,6 +27,7 @@ private:
 	sf::View				_displayView;
 	sf::RenderWindow&		_window;
 	Board                   _board;
+	GBoard                  _gBoard;
 
 public:
 	// Constructeur & destructeur

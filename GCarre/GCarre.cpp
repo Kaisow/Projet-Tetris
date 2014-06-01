@@ -6,7 +6,7 @@ GCarre::GCarre()
 
 void GCarre::init(Couleur col, Vector2f pos)
 {
-    square.setSize(Vector2f(25.0,25.0));
+     square.setSize(Vector2f(25.0,25.0));
     square.setPosition(pos);
 
     switch(col) {
@@ -40,7 +40,6 @@ void GCarre::init(Couleur col, Vector2f pos)
             break;
     };
 }
-
 
 void GCarre::handleEvent(Event& evt)
 {

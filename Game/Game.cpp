@@ -11,7 +11,7 @@
 
 Display::Display(sf::RenderWindow& window) :
 _displayView(window.getDefaultView()),
-_window(window)
+_window(window), _gBoard(_board, getCenter())
 {
 }
 

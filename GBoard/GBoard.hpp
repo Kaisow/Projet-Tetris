@@ -9,6 +9,8 @@ using namespace sf;
 
 class GBoard {
     GCarre          _carres[20][10];
+
+    //Position définies au lancement du jeu, et permanente
     float positionX, positionY;
 
 
@@ -25,6 +27,9 @@ public :
 
     //Affichage
     void draw(sf::RenderWindow& window);
+
+    //Position précise
+    sf::Vector2f setPrecisePosition(int i, int j, float positionX, float positionY);
 
 };
 #endif // GBoard_HPP

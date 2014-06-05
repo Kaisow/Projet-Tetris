@@ -58,8 +58,3 @@ void GCarre::draw(sf::RenderTarget& renderer)
 {
     renderer.draw(square);
 }
-
-sf::Vector2f GCarre::setPrecisePosition(int i, int j, float positionX, float positionY)
-{
-    return Vector2f(Vector2f(positionX + 26 * j, positionY + 26 * i));
-}

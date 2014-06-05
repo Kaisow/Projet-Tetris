@@ -5,12 +5,12 @@ Board::Board()
     //Initialisation de toutes les cases de la grille à FREE (0 en valeur de tableau)
     for(int i = 0; i < BOARD_WIDTH; ++i)
         for(int j = 0; j < BOARD_HEIGHT; ++j)
-            area[i][j] = FREE;
+            area[i][j].state = FREE;
 }
 
 int Board::getState(int i, int j)
 {
-    return area[i][j];
+    return area[i][j].state;
 }
 
 //Configuration de la pièce jouable
@@ -38,7 +38,7 @@ void Board::flood(int i, int j, int px, int py, int k, int o, int value, bool vi
         return;
 
     visited[px][py] = true;
-    area[j][i] = value; // On remplit la case de la valeur dans l'aire
+    area[j][i].type = value; // On remplit la case de la valeur dans l'aire
 
     flood(i, j - 1, px, py - 1, k, o, value, visited);
     flood(i + 1, j, px + 1, py, k, o, value, visited);
@@ -57,7 +57,7 @@ void Board::flood(int i, int j, int px, int py, int k, int o, bool &flag, bool v
    /* Si on dépasse les limites de l'aire de jeu
     * ou si la case sur laquelle on est n'est pas vide
     */
-    if(i < 0 || i >= BOARD_HEIGHT || j < 0 || j >= BOARD_WIDTH || area[j][i] != FREE)
+    if(i < 0 || i >= BOARD_HEIGHT || j < 0 || j >= BOARD_WIDTH || area[j][i].state != FREE)
     {
         flag = false; // on met flag à false
         return;
@@ -148,7 +148,7 @@ void Board::clear()
     for(int i = 0; i < BOARD_WIDTH; ++i)
     {
         for(int j = 0; j < BOARD_HEIGHT; ++j)
-            area[i][j] = FREE;
+            area[i][j].state = FREE;
     }
 }
 
@@ -308,7 +308,7 @@ int Board::deletePossibleLines()
     {
         int i = 0;
 
-        for(; i < BOARD_WIDTH && area[i][j] != FREE; ++i);
+        for(; i < BOARD_WIDTH && area[i][j].state != FREE; ++i);
 
         if(i == BOARD_WIDTH) // On a trouvé une ligne pleine
         {
@@ -347,7 +347,7 @@ bool Board::isGameOver()
 {
     for(int i = 0; i < BOARD_WIDTH; ++i)
     {
-        if(area[i][0] != FREE) // Si il y a un bloc sur la première ligne de l'aire
+        if(area[i][0].state != FREE) // Si il y a un bloc sur la première ligne de l'aire
             return true; // C'est que la partie est finie
     }
 

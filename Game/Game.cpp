@@ -38,7 +38,7 @@ void Display::update(sf::Time& tau)
 //-----------------------------------------------------------------------------
 
 Game::Game() :
-_window(sf::VideoMode(1000, 800), "Evénements I"),_display(_window)
+_window(sf::VideoMode(800, 600), "Evénements I", Style::Close | Style::Titlebar),_display(_window)
 {
 }
 

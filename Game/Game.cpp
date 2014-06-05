@@ -38,8 +38,7 @@ void Display::update(sf::Time& tau)
 //-----------------------------------------------------------------------------
 
 Game::Game() :
-_display(_window),
-_window(sf::VideoMode(1000, 800), "Evénements I")
+_window(sf::VideoMode(1000, 800), "Evénements I"),_display(_window)
 {
 }
 

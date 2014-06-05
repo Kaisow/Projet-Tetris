@@ -93,3 +93,42 @@
 1401618637 source:c:\users\max\documents\github\projet-tetris\gcarre\gcarre.cpp
 	"GCarre.hpp"
 
+1401956861 source:/export/info/maxime.maroine/GitHub/Projet-Tetris/Board/Board.cpp
+	"Board.hpp"
+
+1401956861 /export/info/maxime.maroine/GitHub/Projet-Tetris/Board/Board.hpp
+	"../Shapes/Shapes.hpp"
+	"../Piece/Piece.hpp"
+
+1401956861 /export/info/maxime.maroine/GitHub/Projet-Tetris/Shapes/Shapes.hpp
+
+1401956861 /export/info/maxime.maroine/GitHub/Projet-Tetris/Piece/Piece.hpp
+
+1401958231 source:/export/info/maxime.maroine/GitHub/Projet-Tetris/GBoard/GBoard.cpp
+	"GBoard.hpp"
+
+1401958155 /export/info/maxime.maroine/GitHub/Projet-Tetris/GBoard/GBoard.hpp
+	"../GCarre/GCarre.hpp"
+	"../Board/Board.hpp"
+	<vector>
+
+1401958558 /export/info/maxime.maroine/GitHub/Projet-Tetris/GCarre/GCarre.hpp
+	"../Piece/Piece.hpp"
+	<SFML/Graphics.hpp>
+
+1401957481 source:/export/info/maxime.maroine/GitHub/Projet-Tetris/GCarre/GCarre.cpp
+	"GCarre.hpp"
+
+1401957275 source:/export/info/maxime.maroine/GitHub/Projet-Tetris/Game/Game.cpp
+	"Game.hpp"
+
+1401956861 /export/info/maxime.maroine/GitHub/Projet-Tetris/Game/Game.hpp
+	<SFML/Graphics.hpp>
+	<cassert>
+	<iostream>
+	"../GBoard/GBoard.hpp"
+	"../GCarre/GCarre.hpp"
+
+1401956861 source:/export/info/maxime.maroine/GitHub/Projet-Tetris/Piece/Piece.cpp
+	"Piece.hpp"
+

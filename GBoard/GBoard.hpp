@@ -9,6 +9,7 @@ using namespace sf;
 
 class GBoard {
     GCarre          _carres[20][10];
+    float positionX, positionY;
 
 
 public :
